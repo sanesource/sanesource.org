@@ -17,7 +17,6 @@
   border-radius: 0.4rem;
   flex: 0 0 30%;
   margin-top: 1rem;
-  margin-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,7 +30,6 @@
 
 .projectCard strong {
   font-size: 1.4rem;
-
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -61,5 +59,10 @@
 @media only screen and (max-width: 776px) {
   .projectCard {
     flex: 0 0 48%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .projectCard {
+    flex: 1 1 100%;
   }
 }
