@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Lato, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+small,
+p,
+span {
+  color: var(--color-text);
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  color: var(--color-text);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #1f4690;
+  --color-dark-primary: #1f4690;
+
+  --color-primary-accent: #1363df;
+  --color-dark-primary-accent: #00a8ff;
+
+  --color-text: #333;
+  --color-dark-text: #fafafa;
+
+  --color-border: #333;
+  --color-dark-border: #eee;
+
+  --color-background: #fff;
+  --color-dark-background: #2e2e2e;
+
+  --color-secondary-background: #daeaf1;
+  --color-dark-secondary-background: #413f42;
+}
+
+html[data-theme="dark"] {
+  --color-primary: var(--color-dark-primary);
+  --color-primary-accent: var(--color-dark-primary-accent);
+  --color-text: var(--color-dark-text);
+  --color-border: var(--color-dark-border);
+  --color-background: var(--color-dark-background);
+  --color-secondary-background: var(--color-dark-secondary-background);
+}
