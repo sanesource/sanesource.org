@@ -8,9 +8,9 @@ import Icon from "feather-icons-react";
 import styles from "../styles/components/Header.module.css";
 
 const navLinks = [
-  { title: "Projects", href: "/projects" },
-  { title: "About", href: "/about" },
-  { title: "Contact", href: "/contact" },
+  { title: "Projects", href: "#projects" },
+  { title: "About", href: "#about" },
+  { title: "Contact", href: "#contact" },
 ];
 
 function Header() {

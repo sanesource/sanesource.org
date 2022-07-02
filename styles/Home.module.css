@@ -17,3 +17,7 @@
   font-size: 1.4rem;
   color: var(--color-dark-text);
 }
+
+.projects {
+  padding-top: 4rem;
+}

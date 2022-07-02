@@ -8,6 +8,11 @@ body {
     Droid Sans, Helvetica Neue, sans-serif;
   color: var(--color-text);
   background-color: var(--color-background);
+  scroll-behavior: smooth;
+}
+* {
+  font-family: Lato, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
 }
 
 h1,
@@ -46,6 +51,7 @@ a {
 
   --color-primary-accent: #1363df;
   --color-dark-primary-accent: #00a8ff;
+  --box-shadow-primary-accent: 2px 0px 8px rgba(19, 99, 223, 0.4);
 
   --color-text: #333;
   --color-dark-text: #fafafa;
@@ -56,7 +62,7 @@ a {
   --color-background: #fff;
   --color-dark-background: #2e2e2e;
 
-  --color-secondary-background: #daeaf1;
+  --color-secondary-background: #f4f9f9;
   --color-dark-secondary-background: #413f42;
 }
 
