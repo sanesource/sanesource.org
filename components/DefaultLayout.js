@@ -8,7 +8,7 @@ function DefaultLayout({ children, title }) {
       <Head title={title} />
       <Header />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

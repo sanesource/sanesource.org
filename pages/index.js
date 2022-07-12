@@ -23,7 +23,6 @@ function Index() {
       <section className={styles.projects} id="projects">
         <ProjectList projects={projects} />
       </section>
-      <div style={{ height: 1500 }}></div>
     </section>
   );
 }
