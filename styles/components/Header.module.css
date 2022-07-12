@@ -1,0 +1,114 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  top: 0;
+  position: sticky;
+  height: 4rem;
+  background: var(--color-background);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+
+.mobileNav img {
+  display: none !important;
+}
+
+.menu {
+  all: unset;
+  -webkit-tap-highlight-color: transparent;
+  display: none;
+  cursor: pointer;
+  margin-right: 1rem;
+  color: var(--color-text);
+}
+
+.header > nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.header > nav > b {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.4rem;
+  color: var(--color-text);
+}
+
+.navBarItems {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 1rem;
+}
+
+.navBarItems a {
+  margin-left: 1.4rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1rem;
+}
+
+.navBarItems a:hover {
+  color: var(--color-primary-accent);
+}
+
+.header > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.themeToggleButton {
+  all: unset;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  left: -100vw;
+  top: 0;
+  width: 75vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background);
+  padding: 0 1rem;
+  box-shadow: 2px 0px 12px rgb(0 0 0 / 50%);
+  transition: 0.4s;
+}
+
+.sidebar > div a {
+  display: flex;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.sidebarOuter {
+  position: absolute;
+  bottom: 0;
+  left: 75vw;
+  width: 25vw;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 776px) {
+  .menu {
+    display: block;
+  }
+
+  .header > nav {
+    display: none;
+  }
+
+  .mobileNav img {
+    display: block !important;
+  }
+}

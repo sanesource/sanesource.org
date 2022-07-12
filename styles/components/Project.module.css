@@ -1,0 +1,97 @@
+.projectsWrapper {
+  padding: 1rem;
+  padding-top: 0;
+  margin: 0 auto;
+  max-width: 72rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.projectCard {
+  background-color: var(--color-secondary-background);
+  padding: 1rem;
+  border-radius: 0.4rem;
+  flex: 0 0 30%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectCard > div:nth-of-type(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.projectCard strong {
+  font-size: 1.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.projectCard > div:nth-of-type(1) > span {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.2rem;
+}
+
+.projectCard > p {
+  opacity: 0.8;
+}
+
+.projectCard > div:nth-of-type(2) {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.projectCard > div:nth-of-type(2) > span {
+  border: 1px solid var(--color-border);
+  padding: 0.4rem 0.6rem;
+  border-radius: 1rem;
+}
+
+.projectsWrapper > button {
+  margin: 2rem 0;
+  align-self: center;
+  background: transparent;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  border: 1px solid var(--color-primary-accent);
+  color: var(--color-primary-accent);
+  cursor: pointer;
+}
+
+.projectsWrapper > button:hover {
+  box-shadow: var(--box-shadow-primary-accent);
+  transition: 0.5s;
+}
+
+.projectsWrapper > button > a {
+  all: unset;
+}
+
+@media only screen and (max-width: 776px) {
+  .projectCard {
+    flex: 0 0 48%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .projectCard {
+    flex: 1 1 100%;
+  }
+}
