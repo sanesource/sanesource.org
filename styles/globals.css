@@ -64,6 +64,9 @@ a {
 
   --color-secondary-background: #f4f9f9;
   --color-dark-secondary-background: #413f42;
+
+  --color-background-theme: var(--color-background);
+  --color-dark-background-theme: #1e1e1e;
 }
 
 html[data-theme="dark"] {
@@ -73,4 +76,5 @@ html[data-theme="dark"] {
   --color-border: var(--color-dark-border);
   --color-background: var(--color-dark-background);
   --color-secondary-background: var(--color-dark-secondary-background);
+  --color-background-theme: var(--color-dark-background-theme);
 }

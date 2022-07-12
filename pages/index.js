@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import githubService from "../services/GithubAPIService";
 import ProjectList from "../components/Projects/ProjectList";
+import About from "../components/About";
 import styles from "../styles/Home.module.css";
+import Contact from "../components/Contact";
 
 function Index() {
   const [projects, setProjects] = useState([]);
@@ -22,6 +24,12 @@ function Index() {
       </div>
       <section className={styles.projects} id="projects">
         <ProjectList projects={projects} />
+      </section>
+      <section className={styles.about} id="about">
+        <About />
+      </section>
+      <section className={styles.contact} id="contact">
+        <Contact />
       </section>
     </section>
   );

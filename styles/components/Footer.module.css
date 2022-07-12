@@ -1,4 +1,5 @@
 .footer {
+  background-color: var(--color-background-theme);
   box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.4);
   padding: 1rem 0;
 }
@@ -19,7 +20,7 @@
 }
 
 .footerSections > section > h4,
-.footerSections > section > p {
+.footerSection3 > p {
   margin-top: 0;
 }
 .footerSection2 > ul {

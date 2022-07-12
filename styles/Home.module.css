@@ -18,6 +18,24 @@
   color: var(--color-dark-text);
 }
 
-.projects {
+.projects,
+.about,
+.contact {
   padding-top: 4rem;
+}
+
+.wrapper {
+  padding: 1rem;
+  padding-top: 0;
+  margin: 0 auto;
+  max-width: 72rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper > q {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem;
+  font-weight: 300;
 }

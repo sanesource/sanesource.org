@@ -33,7 +33,7 @@ function Footer() {
             </li>
           </ul>
         </section>
-        <section>
+        <section className={styles.footerSection3}>
           <h4>Contact</h4>
           <p>
             Email: &nbsp;

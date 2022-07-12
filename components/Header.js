@@ -25,10 +25,14 @@ function Header() {
     setTheme(isDark ? "light" : "dark");
   };
 
+  const hideSidebar = () => {
+    sidebarRef.current.style.left = "-100vw";
+  };
+
   const toggleSidebar = () => {
     const isSidebarOpen = sidebarRef.current.style.left === "0px";
     if (isSidebarOpen) {
-      sidebarRef.current.style.left = "-100vw";
+      hideSidebar();
     } else {
       sidebarRef.current.style.left = 0;
     }
@@ -42,7 +46,7 @@ function Header() {
     <>
       {navLinks.map((link) => (
         <Link key={link.title} href={link.href}>
-          {link.title}
+          <a onClick={hideSidebar}>{link.title}</a>
         </Link>
       ))}
     </>
