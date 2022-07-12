@@ -11,7 +11,9 @@ function Index() {
   useEffect(() => {
     githubService.getProjects(6, {}, (err, data) => {
       if (err) return;
-      const projects = data.map(githubService.getFormattedRepo);
+      const projects = data
+        .map(githubService.getFormattedRepo)
+        .sort((a, b) => b.stars - a.stars);
       setProjects(projects);
     });
   }, []);
