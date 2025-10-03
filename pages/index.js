@@ -113,7 +113,8 @@ function Index() {
           </div>
           <h3 className={styles.contactTitle}>Let's Work Together</h3>
           <p className={styles.contactText}>
-            Have a question or want to collaborate? We'd love to hear from you!
+            Have a question or want to collaborate? We&apos;d love to hear from
+            you!
           </p>
           <a
             href="mailto:contact@sanesource.org"
