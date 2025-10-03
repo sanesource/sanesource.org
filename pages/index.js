@@ -111,7 +111,7 @@ function Index() {
           <div className={styles.contactIcon}>
             <Icon icon="mail" size={40} />
           </div>
-          <h3 className={styles.contactTitle}>Let's Work Together</h3>
+          <h3 className={styles.contactTitle}>Let&apos;s Work Together</h3>
           <p className={styles.contactText}>
             Have a question or want to collaborate? We&apos;d love to hear from
             you!
