@@ -1,10 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useTheme } from "next-themes";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
 import Icon from "feather-icons-react";
-
 import styles from "../styles/components/Header.module.css";
 
 const navLinks = [
@@ -14,77 +11,111 @@ const navLinks = [
 ];
 
 function Header() {
-  const sidebarRef = useRef();
   const { systemTheme, theme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const isDark =
     theme === "dark" || (theme === "system" && systemTheme === "dark");
-  const logo = isDark ? "logo-white.png" : "logo.png";
+
   const toggleTheme = () => {
     setTheme(isDark ? "light" : "dark");
   };
 
-  const hideSidebar = () => {
-    sidebarRef.current.style.left = "-100vw";
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
   };
 
-  const toggleSidebar = () => {
-    const isSidebarOpen = sidebarRef.current.style.left === "0px";
-    if (isSidebarOpen) {
-      hideSidebar();
-    } else {
-      sidebarRef.current.style.left = 0;
-    }
+  const closeSidebar = () => {
+    setSidebarOpen(false);
   };
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  const links = (
-    <>
-      {navLinks.map((link) => (
-        <Link key={link.title} href={link.href}>
-          <a onClick={hideSidebar}>{link.title}</a>
-        </Link>
-      ))}
-    </>
-  );
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [sidebarOpen]);
 
   if (!isMounted) return null;
 
   return (
-    <header className={styles.header}>
-      <div className={styles.mobileNav}>
-        <button className={styles.menu} onClick={toggleSidebar}>
-          <Icon icon="menu" size={32} />
-        </button>
-        <Link href="/">
-          <a>
-            <Image width={32} height={32} src={`/assets/${logo}`} alt="logo" />
-          </a>
-        </Link>
+    <>
+      <header className={styles.header}>
+        <div className={styles.headerContainer}>
+          <Link href="/">
+            <a className={styles.logo}>
+              <span>SaneSource</span>
+            </a>
+          </Link>
+
+          <nav className={styles.nav}>
+            {navLinks.map((link) => (
+              <Link key={link.title} href={link.href}>
+                <a className={styles.navLink}>{link.title}</a>
+              </Link>
+            ))}
+          </nav>
+
+          <div className={styles.actions}>
+            <button
+              className={styles.themeToggle}
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              <Icon icon={isDark ? "sun" : "moon"} size={20} />
+            </button>
+            <div className={styles.mobileNav}>
+              <button
+                className={styles.menuButton}
+                onClick={toggleSidebar}
+                aria-label="Toggle menu"
+              >
+                <Icon icon="menu" size={22} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Sidebar */}
+      <div
+        className={`${styles.sidebar} ${sidebarOpen ? styles.sidebarOpen : ""}`}
+      >
+        <div className={styles.sidebarHeader}>
+          <span className={styles.sidebarLogo}>SaneSource</span>
+          <button
+            className={styles.closeButton}
+            onClick={closeSidebar}
+            aria-label="Close menu"
+          >
+            <Icon icon="x" size={22} />
+          </button>
+        </div>
+        <nav className={styles.sidebarNav}>
+          {navLinks.map((link) => (
+            <Link key={link.title} href={link.href}>
+              <a className={styles.sidebarLink} onClick={closeSidebar}>
+                {link.title}
+              </a>
+            </Link>
+          ))}
+        </nav>
       </div>
-      <nav>
-        <Link href="/">
-          <b className={styles.title}>SaneSource</b>
-        </Link>
-        <div className={styles.navBarItems}>{links}</div>
-      </nav>
-      <div>
-        <DarkModeSwitch checked={isDark} onChange={toggleTheme} />
-      </div>
-      <section ref={sidebarRef} className={styles.sidebar}>
-        <Link href="/">
-          <a onClick={toggleSidebar}>
-            <h2>SaneSource</h2>
-          </a>
-        </Link>
-        <div>{links}</div>
-        <div className={styles.sidebarOuter} onClick={toggleSidebar}></div>
-      </section>
-    </header>
+
+      {/* Backdrop */}
+      <div
+        className={`${styles.backdrop} ${
+          sidebarOpen ? styles.backdropVisible : ""
+        }`}
+        onClick={closeSidebar}
+      ></div>
+    </>
   );
 }
 
